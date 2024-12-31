@@ -3,11 +3,18 @@
 
 function conectarDB() : Mysqli{
 
-    $db= new mysqli('localhost', 'root', 'admin1234', 'DBContacto');
+    // cargando las credenciales desde las varaibles del entorno
+
+    $host =getenv('DB_HOST') ?: 'localhost';
+    $user = getenv('DB_USER') ?: 'root';
+    $password = getenv('DB_PASSWORD') ?: 'admin1234';
+    $database = getenv('DB_NAME') ?: 'DBContacto';
+
+    $db= new mysqli( $host, $user , $password ,  $database);
 
     if(!$db){
-        echo "Error no se puede conectar";
-        exit;
+        die( "Error no se puede conectar". $db->connect_error);
+     
     }
 
     return $db;
