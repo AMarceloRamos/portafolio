@@ -1,6 +1,6 @@
 <?php  
 
-require 'include/config/database.php';
+require '../include/config/database.php';
 
 $db = conectarDB();
 
