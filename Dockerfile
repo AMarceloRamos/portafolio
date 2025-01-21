@@ -1,20 +1,24 @@
-# Usa una imagen oficial de PHP con servidor web embebido
-FROM php:8.1-cli
+# Usa una imagen base de PHP
+FROM php:8.2-cli
 
-# Establece el directorio de trabajo en el contenedor
+# Instala Git y otras dependencias necesarias
+RUN apt-get update && apt-get install -y \
+    git \
+    unzip \
+    && rm -rf /var/lib/apt/lists/*
+
+# Copia los archivos de tu proyecto al contenedor
+COPY . /app
 WORKDIR /app
 
-# Copia los archivos de tu aplicación al contenedor
-COPY . /app
-
-# Instala Composer si es necesario
+# Instala Composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Instala dependencias de Composer
-RUN composer install
+RUN composer install --no-interaction --optimize-autoloader
 
-# Expone el puerto 10000 para Render
+# Expone el puerto necesario para Render
 EXPOSE 10000
 
-# Comando para iniciar el servidor embebido de PHP
-CMD ["php", "-S", "0.0.0.0:10000", "-t", "/app"]
+# Comando para iniciar tu aplicación
+CMD ["php", "-S", "0.0.0.0:10000", "-t", "public"]
