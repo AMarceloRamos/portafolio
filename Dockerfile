@@ -5,6 +5,11 @@ FROM php:8.2-cli
 RUN apt-get update && apt-get install -y \
     git \
     unzip \
+    libpq-dev \
+    libonig-dev \
+    && docker-php-ext-install \
+    mysqli \
+    pdo_mysql \
     && rm -rf /var/lib/apt/lists/*
 
 # Copia los archivos de tu proyecto al contenedor
