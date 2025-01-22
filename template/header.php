@@ -1,11 +1,4 @@
 <!DOCTYPE html>
-<!--
-	xBe by TEMPLATE STOCK
-	templatestock.co @templatestock
-	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
--->
-
-
 <html lang="en">
 
 <head>
@@ -21,7 +14,7 @@
 
     <!-- Custom CSS -->
 
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/style.css">
 
     <!-- Custom Fonts -->
 
