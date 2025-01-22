@@ -1,18 +1,17 @@
 <?php
-function conectarDB(): mysqli {
-    $host = getenv('DB_HOST') ?: 'dpg-ctq6ofqj1k6c739pn1ng-a';
-    $user = getenv('DB_USER') ?: 'dbcontacto_user';
-    $password = getenv('DB_PASSWORD') ?: 'NmmS5wypyPKhdSZPkQCnPk4hb6toH1SJ';
-    $database = getenv('DB_NAME') ?: 'dbcontacto';
+function conectarDB() {
+    $host = "dpg-ctq6ofqj1k6c739pn1ng-a";
+    $port = "5432";
+    $dbname = "dbcontacto";
+    $user = "dbcontacto_user";
+    $password = "NmmS5wypyPKhdSZPkQCnPk4hb6toH1SJ";
 
-   
-    $db= new mysqli($host,$user,$password,$database);
+    $connection_string = "host=$host port=$port dbname=$dbname user=$user password=$password";
+    $db = pg_connect($connection_string);
 
-    if(!$db){
-        die( "Error no se puede conectar". $db->connect_error);
-     
+    if (!$db) {
+        die("Error al conectar a la base de datos: " . pg_last_error());
     }
 
     return $db;
-
 }
