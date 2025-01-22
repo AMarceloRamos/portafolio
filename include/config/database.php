@@ -6,7 +6,7 @@ function conectarDB(): mysqli {
     $database = getenv('DB_NAME') ?: 'dbcontacto';
 
    
-    $db= new mysqli( $host, $user , $password ,  $database);
+    $db= new mysqli($host,$user,$password,$database);
 
     if(!$db){
         die( "Error no se puede conectar". $db->connect_error);
