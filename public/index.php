@@ -72,7 +72,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
    } 
  
 }
-mysqli_close($db);
+$pdo = null;
 include 'template/header.php';
 
 ?>
