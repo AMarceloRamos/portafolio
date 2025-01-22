@@ -58,9 +58,6 @@
                             <a class="page-scroll" href="#services">Mis Conocimientos</a>
                         </li>
                         <li>
-                            <a class="page-scroll" href="#about">Acerca de mí</a>
-                        </li>
-                        <li>
                             <a class="page-scroll" href="#portfolio">Portafolio</a>
                         </li>
                         <!-- <li>
