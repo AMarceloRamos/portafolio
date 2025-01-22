@@ -73,7 +73,7 @@ if($_SERVER['REQUEST_METHOD'] === 'POST'){
  
 }
 $pdo = null;
-include 'template/header.php';
+include '../template/header.php';
 
 ?>
 
@@ -106,12 +106,12 @@ include 'template/header.php';
 <!-- Team About -->
 
 <?php 
-        include 'about.php';
+        include '../about.php';
     ?>
 <!-- Portfolio Section -->
 
 <?php 
-        include 'portafolio.php';
+        include '../portafolio.php';
      ?>
 
 
@@ -129,12 +129,12 @@ include 'template/header.php';
    ?>
 <!-- Contact Section -->
 <?php 
-     include 'contacto.php';
+     include '../contacto.php';
 ?>
 <!-- Footer -->
 
 
 <?php 
     
-    include 'template/footer.php';
+    include '../template/footer.php';
 ?>
