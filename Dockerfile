@@ -27,3 +27,6 @@ EXPOSE 10000
 
 # Comando para iniciar tu aplicación
 CMD ["php", "-S", "0.0.0.0:10000", "-t", "public"]
+
+#instalacion drivers pdo_pgsql
+RUN docker-php-ext-install pdo_pgsql
